@@ -1,1 +1,1 @@
-# Proyecto-GEN-AI
+# Proyecto-Gen-AI
