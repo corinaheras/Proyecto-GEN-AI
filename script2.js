@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Validar y guardar en LocalStorage
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
+        e.preventDefault(); // Evitar recarga de la página
 
+        // Obtener valores del formulario
         const nombre = document.getElementById("nombre").value.trim();
         const apellido = document.getElementById("apellido").value.trim();
         const telefono = document.getElementById("telefono").value.trim();
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const bootcampSelect = document.getElementById("bootcamp");
         const comentarios = document.getElementById("comentarios").value.trim();
 
+        // Obtener los bootcamps seleccionados
         const bootcamps = Array.from(bootcampSelect.selectedOptions).map(option => option.value);
 
         // Validaciones
@@ -54,11 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+        // Crear objeto de datos
+        const registro = {
+            nombre,
+            apellido,
+            telefono,
+            correo,
+            bootcamps,
+            comentarios: comentarios || "Sin comentarios"
+        };
+
+        console.log("Datos a guardar:", registro); // Verificar en consola que los datos sean correctos
+
         // Guardar datos en LocalStorage
-        const registro = { nombre, apellido, telefono, correo, bootcamps, comentarios };
         guardarEnLocalStorage(registro);
 
-        alert("Registro exitoso.");
+        alert("Registro exitoso. Los datos han sido guardados.");
         form.reset();
         modal.classList.add("hidden");
     });
@@ -68,5 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let registros = JSON.parse(localStorage.getItem("registros")) || [];
         registros.push(datos);
         localStorage.setItem("registros", JSON.stringify(registros));
+        console.log("Datos guardados en localStorage:", registros); // Verificar si realmente se guardan
     }
 });
