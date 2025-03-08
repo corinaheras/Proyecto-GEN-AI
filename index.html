@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Bootcamps ESPOL</title>
     <script src="https://cdn.tailwindcss.com"></script>
-   
+
 </head>
+
 <body class="bg-gray-100 text-gray-900">
 
     <!-- ENCABEZADO -->
@@ -18,7 +20,8 @@
     <!-- SECCIÓN PRINCIPAL: INTRODUCCIÓN -->
     <section class="container mx-auto px-4 py-12 text-center">
         <h2 class="text-2xl font-semibold">¿Por qué aprender desarrollo web y bases de datos?</h2>
-        <p class="mt-4 text-gray-700">El mundo digital crece a un ritmo acelerado, y las empresas buscan cada vez más profesionales con habilidades en JavaScript y bases de datos...</p>
+        <p class="mt-4 text-gray-700">El mundo digital crece a un ritmo acelerado, y las empresas buscan cada vez más
+            profesionales con habilidades en JavaScript y bases de datos...</p>
     </section>
 
     <!-- SECCIÓN: ¿QUÉ APRENDERÁS? -->
@@ -46,10 +49,37 @@
     <section class="bg-blue-600 text-white py-12 text-center">
         <div class="container mx-auto">
             <h2 class="text-2xl font-semibold">¡Inscríbete hoy y transforma tu futuro!</h2>
-            <p class="mt-4">Este bootcamp te proporcionará las habilidades necesarias para convertirte en un desarrollador web profesional.</p>
-            <a href="#" id="openModal" class="mt-6 inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-500">Regístrate Ahora</a>
+            <p class="mt-4">Este bootcamp te proporcionará las habilidades necesarias para convertirte en un
+                desarrollador web profesional.</p>
+            <a href="#" id="openModal"
+                class="mt-6 inline-block bg-yellow-400 text-black px-6 py-3 rounded-lg font-bold hover:bg-yellow-500">Regístrate
+                Ahora</a>
         </div>
     </section>
+
+
+    <!-- SECCIÓN DE TESTIMONIOS -->
+    <section class="container mx-auto px-4 py-12 text-center">
+        <h2 class="text-2xl font-semibold">Lo que dicen nuestros estudiantes</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 shadow-md rounded-lg">
+                <img src="img/daniel.jpg" alt="Daniel" class="w-20 h-20 mx-auto rounded-full">
+                <h4 class="mt-4 font-semibold">Daniel Rodríguez</h4>
+                <p class="text-gray-700">"Este bootcamp superó mis expectativas. Ahora trabajo como desarrollador full-stack en una startup tecnológica."</p>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg">
+                <img src="img/xavier.jpg" alt="Xavier" class="w-20 h-20 mx-auto rounded-full">
+                <h4 class="mt-4 font-semibold">Xavier Martínez</h4>
+                <p class="text-gray-700">"Aprender JavaScript y bases de datos aquí me permitió crear mis propios proyectos y destacarme en entrevistas de trabajo."</p>
+            </div>
+            <div class="bg-white p-6 shadow-md rounded-lg">
+                <img src="img/juan.jpg" alt="Juan" class="w-20 h-20 mx-auto rounded-full">
+                <h4 class="mt-4 font-semibold">Juan Pérez</h4>
+                <p class="text-gray-700">"Gracias a este bootcamp, conseguí mi primer empleo como desarrollador junior en una empresa de software."</p>
+            </div>
+        </div>
+    </section>
+
 
     <!-- MODAL DE REGISTRO -->
     <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
@@ -59,17 +89,21 @@
                 <input type="text" id="nombre" placeholder="Nombre" class="w-full p-2 border rounded" required>
                 <input type="text" id="apellido" placeholder="Apellido" class="w-full p-2 border rounded">
                 <input type="tel" id="telefono" placeholder="Teléfono" class="w-full p-2 border rounded" required>
-                <input type="email" id="correo" placeholder="Correo Electrónico" class="w-full p-2 border rounded" required>
+                <input type="email" id="correo" placeholder="Correo Electrónico" class="w-full p-2 border rounded"
+                    required>
                 <label class="block font-semibold">Bootcamps de interés:</label>
                 <select id="bootcamp" multiple class="w-full p-2 border rounded" required>
                     <option value="Desarrollo Web">Desarrollo Web</option>
                     <option value="Bases de Datos">Bases de Datos</option>
                     <option value="Seguridad Informática">Seguridad Informática</option>
                 </select>
-                <textarea id="comentarios" placeholder="Comentarios (opcional)" class="w-full p-2 border rounded"></textarea>
-                <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Enviar</button>
+                <textarea id="comentarios" placeholder="Comentarios (opcional)"
+                    class="w-full p-2 border rounded"></textarea>
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Enviar</button>
             </form>
-            <button id="closeModal" class="mt-4 w-full bg-red-600 text-white p-2 rounded hover:bg-red-700">Cerrar</button>
+            <button id="closeModal"
+                class="mt-4 w-full bg-red-600 text-white p-2 rounded hover:bg-red-700">Cerrar</button>
         </div>
     </div>
 
@@ -90,5 +124,5 @@
     <script defer src="script2.js"></script>
 </body>
 
-   
+
 </html>
