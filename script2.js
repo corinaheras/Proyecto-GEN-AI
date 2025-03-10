@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const openModal = document.getElementById("openModal");
     const closeModal = document.getElementById("closeModal");
     const form = document.getElementById("formRegistro");
-    const recomendacionTexto = document.getElementById("btnRecomendar");
-    const recomendacionContainer = document.getElementById("recomendacion");
+ 
 
 
     // API Key de OpenAI (Debes reemplazarla con la tuya)
@@ -91,42 +90,5 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Datos guardados en localStorage:", registros); // Verificar si realmente se guardan
     }
 
-    // Función para obtener una recomendación desde OpenAI
-    async function obtenerRecomendacion(temas) {
-        const API_KEY = "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"; // ⚠️ Reemplaza con tu clave de OpenAI
-
-        const prompt = `Soy un asesor de educación y quiero recomendar un bootcamp basado en estos temas: ${temas.join(", ")}. 
-        Dame una recomendación clara y breve.`;
-
-        try {
-            const response = await fetch("https://api.openai.com/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${API_KEY}`
-                },
-                body: JSON.stringify({
-                    model: "gpt-3.5-turbo",
-                    messages: [{ role: "user", content: prompt }]
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error("Error al obtener la recomendación");
-            }
-
-            const data = await response.json();
-            const recomendacion = data.choices[0].message.content;
-
-            // Mostrar la recomendación en la página
-            recomendacionTexto.textContent = recomendacion;
-            recomendacionContainer.classList.remove("hidden");
-
-        } catch (error) {
-            console.error("Error obteniendo recomendación:", error);
-            recomendacionTexto.textContent = "No se pudo obtener una recomendación en este momento.";
-            recomendacionContainer.classList.remove("hidden");
-        }
-    }
-
+ 
 });
