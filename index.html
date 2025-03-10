@@ -8,6 +8,8 @@
         content="Impulsa tu carrera en tecnología con los Coding Bootcamps ESPOL. Aprende desarrollo web, bases de datos, JavaScript, React y Data Science en un curso intensivo.">
     <title>Coding Bootcamps ESPOL | Aprende Desarrollo Web y Ciencia de Datos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 
@@ -356,37 +358,43 @@
 
 
     <!-- MODAL DE REGISTRO -->
-    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center hidden">
-        <div class="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h2 class="text-xl font-semibold mb-4">Registro al Bootcamp</h2>
-            <form id="formRegistro" class="space-y-4">
-                <input type="text" id="nombre" placeholder="Nombre" class="w-full p-2 border rounded" required>
-                <input type="text" id="apellido" placeholder="Apellido" class="w-full p-2 border rounded">
-                <input type="tel" id="telefono" placeholder="Teléfono" class="w-full p-2 border rounded" required>
-                <input type="email" id="correo" placeholder="Correo Electrónico" class="w-full p-2 border rounded"
-                    required>
-                <label class="block font-semibold">Bootcamps de interés:</label>
-                <select id="bootcamp" multiple class="w-full p-2 border rounded" required>
-                    <option value="Desarrollo Web">Desarrollo Web</option>
-                    <option value="Bases de Datos">Bases de Datos</option>
-                    <option value="Seguridad Informática">Seguridad Informática</option>
-                </select>
-                <textarea id="comentarios" placeholder="Comentarios (opcional)"
-                    class="w-full p-2 border rounded"></textarea>
-
-                <button type="submit"
-                    class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Enviar</button>
-            </form>
-
-            <button id="btnRecomendar" type="button"
-                class="mt-4 bg-blue-500 text-white w-full px-4 py-2 rounded-lg hover:bg-blue-600">
-                Obtener Recomendación
-            </button>
-            <p id="recomendacion" class="mt-2 text-sm text-gray-700"></p>
-            <button id="closeModal"
-                class="mt-4 w-full bg-red-600 text-white p-2 rounded hover:bg-red-700">Cerrar</button>
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden">
+        <div id="modalContent" class="bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl resizable max-h-full overflow-y-auto">
+            <div id="modalHeader"
+                class="cursor-move bg-blue-600 text-white p-2 rounded-t-lg flex justify-between items-center">
+                <h2 class="text-xl font-semibold">Registro al Bootcamp</h2>
+                <button id="closeModal" class="text-white">&times;</button>
+            </div>
+            <div class="p-4">
+                <form id="formRegistro" class="space-y-4">
+                    <input type="text" id="nombre" placeholder="Nombre" class="w-full p-2 border rounded" required>
+                    <input type="text" id="apellido" placeholder="Apellido" class="w-full p-2 border rounded">
+                    <input type="tel" id="telefono" placeholder="Teléfono" class="w-full p-2 border rounded" required>
+                    <input type="email" id="correo" placeholder="Correo Electrónico" class="w-full p-2 border rounded"
+                        required>
+                    <label class="block font-semibold">Bootcamps de interés:</label>
+                    <select id="bootcamp" multiple class="w-full p-2 border rounded" required>
+                        <option value="Desarrollo Web">Desarrollo Web</option>
+                        <option value="Bases de Datos">Bases de Datos</option>
+                        <option value="Seguridad Informática">Seguridad Informática</option>
+                    </select>
+                    <textarea id="comentarios" placeholder="Comentarios (opcional)"
+                        class="w-full p-2 border rounded"></textarea>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Enviar</button>
+                </form>
+                <button id="btnRecomendar" type="button"
+                    class="mt-4 bg-blue-500 text-white w-full px-4 py-2 rounded-lg hover:bg-blue-600">Obtener
+                    Recomendación</button>
+                <p id="recomendacion" class="mt-2 text-sm text-gray-700"></p>
+                <button id="closeModal" class="mt-4 w-full bg-red-600 text-white p-2 rounded hover:bg-red-700">
+                    Cerrar
+                </button>
+            </div>
         </div>
     </div>
+
+
 
     <!-- SECCIÓN DE CONTACTO -->
     <section class="bg-gray-900 text-white text-center py-12">
@@ -402,7 +410,7 @@
     <footer class="bg-black text-white text-center py-4">
         © 2025 Coding Bootcamps ESPOL - Todos los derechos reservados.
     </footer>
-    <script defer src="script2.js"></script>
+    <script defer src="script.js"></script>
 </body>
 
 
